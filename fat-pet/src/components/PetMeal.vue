@@ -1,18 +1,24 @@
 <template>
   <div class="meal">
-    <p style="font-weight: 500">1st</p>
+    <p style="font-weight: 500">{{ meal.meal }}</p>
     <div>
       <div class="meal-details">
-        <div><p>Fed By:</p></div>
-        <div><p style="color: #3378ff">Doug</p></div>
+        <div><p>Fed By:&nbsp;</p></div>
+        <div>
+          <p style="color: #3378ff">{{ meal.fedBy }}</p>
+        </div>
       </div>
       <div class="meal-details">
-        <div><p>At:</p></div>
-        <div><p>6:10am</p></div>
+        <div><p>At:&nbsp;</p></div>
+        <div>
+          <p>{{ meal.at }}</p>
+        </div>
       </div>
       <div class="meal-details">
-        <div><p>Status:</p></div>
-        <div><p>Ate</p></div>
+        <div><p>Status:&nbsp;</p></div>
+        <div>
+          <p>{{ meal.status }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -21,6 +27,9 @@
 <script>
 export default {
   name: "PetMeal",
+  props: {
+    meal: Object,
+  },
 };
 </script>
 
@@ -32,7 +41,7 @@ export default {
   align-items: center;
   width: 15rem;
   background-color: #ffffff;
-  box-shadow: 0px 0px 5px #c4c4c4;
+  box-shadow: 0px 0px 5px #d9d9d9;
   border-radius: 10px;
   padding: 1rem;
 }

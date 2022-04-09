@@ -4,19 +4,19 @@
     <div id="items">
       <div id="action-items">
         <div class="item-group">
-          <p>Fed my pet</p>
-          <p>Excersied</p>
+          <p @click="fedPet()" class="action-btn">Fed my pet</p>
+          <p @click="excersiedPet()" class="action-btn">Excersied</p>
         </div>
         <div class="item-group">
-          <p>Add a Pet</p>
-          <p>Add a Care Taker</p>
+          <p @click="addPet()" class="action-btn">Add a Pet</p>
+          <p @click="addCareTaker()" class="action-btn">Add a Care Taker</p>
         </div>
         <div>
-          <p>Calendar View</p>
+          <p @click="openCalendar()" class="action-btn">Calendar View</p>
         </div>
       </div>
       <div>
-        <p>About</p>
+        <p @click="openAbout()" class="action-btn">About</p>
       </div>
     </div>
   </div>
@@ -25,6 +25,26 @@
 <script>
 export default {
   name: "SideBar",
+  methods: {
+    fedPet() {
+      alert("YOU FED YOUR PET");
+    },
+    excersiedPet() {
+      alert("YOU WALKED YOUR PET");
+    },
+    addPet() {
+      alert("YOU ADDED A NEW PET");
+    },
+    addCareTaker() {
+      alert("YOU ADDED A NEW CARE TAKER");
+    },
+    openCalendar() {
+      alert("OPEN CAL");
+    },
+    openAbout() {
+      alert("OPEN ABOUT");
+    },
+  },
 };
 </script>
 
@@ -56,5 +76,9 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.action-btn {
+  cursor: pointer;
 }
 </style>
